@@ -1,0 +1,22 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+src/*.egg-info/
+dist/
+build/
+.venv/
+venv/
+# ---- Experiments & secrets ----
+experiments/*/
+!experiments/.gitkeep
+examples/solved_problem/_workspace/
+.env
+*.jsonl
+# ---- OS ----
+.DS_Store
+Thumbs.db
+# ---- Tooling ----
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

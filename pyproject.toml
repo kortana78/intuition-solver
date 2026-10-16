@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intuition-solver"
+version = "0.1.0"
+description = "Analogy-mediated multi-agent framework for mathematical exploration and proof discovery"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Intuition Solver Contributors" }]
+keywords = ["mathematics", "ai", "multi-agent", "analogy", "proof-verification"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+  "pydantic>=2.0",
+  "typer>=0.9",
+  "rich>=13.0",
+  "fastapi>=0.100",
+  "uvicorn>=0.23",
+  "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.0"]
+dev = ["pytest>=7.0", "httpx>=0.24"]
+all = ["intuition-solver[openai]", "pytest>=7.0", "httpx>=0.24"]
+
+[project.scripts]
+intuition = "intuition_solver.cli.main:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100

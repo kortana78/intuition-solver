@@ -1,0 +1,2 @@
+# experiments/ holds local experiment workspaces (git-ignored except .gitkeep).
+# Each experiment lives in experiments/<experiment-id>/ with experiment.json + events.jsonl.
